@@ -10,11 +10,19 @@ FROM raw_data.session_timestamp st
 JOIN raw_data.user_session_channel usc on st.sessionid = usc.sessionid;
 ~~~
 
-2. 월 별 세션 count
-2-1. 일 별 count
+###2. 월 별 세션 count
+####2-1. 일 별 count
 ~~~
 SELECT date(ts), count(userid)
 FROM adhoc.chris_test
 GROUP BY date(ts)
 ORDER BY date(ts);
+~~~
+
+####2-2. 월 별 count
+~~~
+SELECT extract(month from ts) as M, count(userid)
+FROM adhoc.chris_test
+GROUP BY M
+ORDER BY M;
 ~~~
