@@ -29,7 +29,7 @@ ORDER BY M;
 
 #### 2-3. format 정리, duplicate 삭제
 ~~~~
-SELECT convert(char(10),date_trunc('month', ts)) as Month, count(distinct((userid)))
+SELECT convert(char(7),date_trunc('month', ts)) as Month, count(distinct((userid)))
 FROM adhoc.chris_test
 GROUP BY date_trunc('month', ts)
 ORDER BY date_trunc('month', ts);
