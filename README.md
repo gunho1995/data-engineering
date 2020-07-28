@@ -21,8 +21,19 @@ ORDER BY date(ts);
 
 #### 2-2. 월 별 count
 ~~~
-SELECT extract(month from ts) as M, count(userid)
+SELECT extract(month from ts) as M, count(distinct((userid))
 FROM adhoc.chris_test
 GROUP BY M
 ORDER BY M;
 ~~~
+
+#### 2-3. format 정리, duplicate 삭제
+~~~~
+SELECT convert(char(10),date_trunc('month', ts)) as Month, count(distinct((userid)))
+FROM adhoc.chris_test
+GROUP BY date_trunc('month', ts)
+ORDER BY date_trunc('month', ts);
+~~~~
+
+[!Result][./monthly_active_user.png]
+
