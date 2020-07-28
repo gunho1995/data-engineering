@@ -35,5 +35,5 @@ GROUP BY date_trunc('month', ts)
 ORDER BY date_trunc('month', ts);
 ~~~~
 
-[!Result][./monthly_active_user.png]
+[!Result][./img/monthly_active_user.png]
 
