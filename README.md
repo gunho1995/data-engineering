@@ -31,8 +31,8 @@ ORDER BY M;
 ~~~~
 SELECT convert(char(7),date_trunc('month', ts)) as Month, count(distinct((userid)))
 FROM adhoc.chris_test
-GROUP BY date_trunc('month', ts)
-ORDER BY date_trunc('month', ts);
+GROUP BY 1
+ORDER BY 1;
 ~~~~
 
 ![Result](./img/active_user.png)
