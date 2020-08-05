@@ -35,4 +35,4 @@ GROUP BY 1
 ORDER BY 1;
 ~~~~
 
-![Result](./img/active_user.png)
+![Result](../img/active_user.png)
